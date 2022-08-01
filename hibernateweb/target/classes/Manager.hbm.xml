@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-June-2021, 10:01:05 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.wipro.velocity.Manager" table="MANAGER100">
+        <id name="managerId" type="int">
+            <column name="MANAGER_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="managerName" type="java.lang.String">
+            <column name="MANAGER_NAME" />
+        </property>
+        <set name="phoneNumbers" table="MANAGER_PHONE" inverse="false" lazy="true">
+            <key>
+                <column name="MANAGERID" />
+            </key>
+            <element type="java.lang.String">
+                <column name="PHONENUMBERS" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>

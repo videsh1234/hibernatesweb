@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-Jun-2021, 10:01:05 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.wipro.velocity.Employee" table="EMPLOYEE100">
+        <id name="employeeId" type="int">
+            <column name="EMPLOYEE_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeName" type="java.lang.String">
+            <column name="EMPLOYEE_NAME" />
+        </property>
+        <set name="phoneNumbers" table="EMPLOYEE_PHONE" inverse="false" lazy="true">
+            <key>
+                <column name="EMPLOYEEID" />
+            </key>
+            <element type="java.lang.String">
+                <column name="PHONENUMBERS" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>

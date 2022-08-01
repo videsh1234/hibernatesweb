@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+ 
+
+<hibernate-mapping>
+ 
+ <class name="com.wipro.velocity.Student" table="Student100">
+  <id name="studentId" type="int" column="Student_Id">
+    <generator class="identity"></generator>
+  </id>
+ 
+  <property name="firstName" column="First_Name" type="string"/>
+  <property name="lastName" column="Last_Name" type="string"/>
+  <property name="rollNo" column="RollNo" type="string"/>
+  <property name="age" column="Age" type="int"/>
+ 
+  <component name="studentClass" 
+  class="com.wipro.velocity.StudentClass">
+    <property name="classId" column="Class_Id" type="string"/>
+    <property name="className" column="Class_Name" type="string"/>
+  </component>
+ 
+ </class>
+ 
+</hibernate-mapping>
+         

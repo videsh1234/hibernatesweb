@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.password">videsh</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/training</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        
+        <mapping class="com.wipro.velocity.User"/>
+        <mapping resource="Employee.hbm.xml"/>
+        <mapping resource="Person.hbm.xml"/>
+        <mapping resource="Student.hbm.xml"/>
+        <mapping resource="Manager.hbm.xml"/>
+        <mapping class="com.wipro.velocity.Customer"/>
+        <mapping class="com.wipro.velocity.Address"/>
+        <mapping class="com.wipro.velocity.Question"/>
+        <mapping class="com.wipro.velocity.Answer"/>
+        
+        <mapping class = "com.wipro.velocity.Dealer"/>
+        
+        
+        
+        
+    </session-factory>
+</hibernate-configuration>
